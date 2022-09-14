@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,17 @@ namespace Text03
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            if(openFileDialog1.ShowDialog()==DialogResult.OK)
+            {
+                StreamReader streamReader = new StreamReader(openFileDialog1.FileName);
+                int pcradku = 0;
+                while(!streamReader.EndOfStream)
+                {
+                    string line = streamReader.ReadLine();
+                    if (char.IsUpper(line[0]) && line.EndsWith(".")) pcradku++;
+                }
+                MessageBox.Show("Řádků velkým písmenem začínajících a končících tečkou je: " + pcradku);
+            }
         }
     }
 }
