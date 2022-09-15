@@ -27,7 +27,7 @@ namespace Text03
                 while(!streamReader.EndOfStream)
                 {
                     string line = streamReader.ReadLine();
-                    if (char.IsUpper(line[0]) && line.EndsWith(".")) pcradku++;
+                    if (char.IsUpper(line[0]) && line[line.Length-2]!='.'&& line.EndsWith(".")) pcradku++;
                 }
                 MessageBox.Show("Řádků velkým písmenem začínajících a končících tečkou je: " + pcradku);
             }
