@@ -32,5 +32,10 @@ namespace Text03
                 MessageBox.Show("Řádků velkým písmenem začínajících a končících tečkou je: " + pcradku);
             }
         }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
     }
 }
